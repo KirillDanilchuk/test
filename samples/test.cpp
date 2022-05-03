@@ -15,3 +15,12 @@ TEST_SUITE(Assert) {
     ASSERT_TRUE(true);
   }
 }
+
+TEST_SUITE(Except) {
+  TEST(True) {
+    EXCEPT_TRUE(true);
+  }
+  TEST(False) {
+    EXCEPT_TRUE(false);
+  }
+}
