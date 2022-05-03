@@ -11,4 +11,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 add_library(test_main main.cpp)
 target_link_libraries(test_main PUBLIC test)
 
-add_subdirectory(samples)
+option(ENABLE_SAMPLES "Enable all samples for this library" OFF)
+
+if(ENABLE_SAMPLES)
+    add_subdirectory(samples)
+endif()
