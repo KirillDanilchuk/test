@@ -3,7 +3,9 @@ project(test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(test test/test.cpp)
+file(GLOB SOURCES test/*.cpp)
+
+add_library(test ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_library(test_main main.cpp)
