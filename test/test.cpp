@@ -27,12 +27,12 @@ TestList& GetAllTests() {
 
 void Warn(int) {
   detail::CurrentTest()->SetStatus(ITest::Status::kExceptFailed);
-  throw 1;
+  throw std::runtime_error("except occurred");
 }
 
 void Fail(int) {
   detail::CurrentTest()->SetStatus(ITest::Status::kAssertFailed);
-  throw 1;
+  throw std::runtime_error("assert occurred");
 }
 
 ITestPtr detail::CurrentTest() noexcept {
